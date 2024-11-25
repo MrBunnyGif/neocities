@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { LoadingDots, LoadingLogs, SpinLoadingIcon } from "../components";
-import yorhaLogo from "./../assets/yorha-opacity-logo.png";
 import { useNavigate } from "react-router-dom";
 import { StyledGlitchText } from "../styles/glitchingTextStyle";
 import { mobileMaxWidth } from "../utils/mediaQueriesValues";
@@ -11,7 +10,7 @@ TODO: Add route changing animation
 const Main = styled.main`
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85) url(${yorhaLogo}) center center no-repeat;
+  background: rgba(0, 0, 0, 0.85);
   background-repeat: no-repeat;
   background-position: center;
   color: white;
