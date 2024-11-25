@@ -22,6 +22,7 @@ width: 100%;
 background-image: linear-gradient(90deg, #b4af9a 50%, #b4af9a 50%, #57544a 50%, #57544a 100%);
 background-size: 200%;
 color:#57544a;
+cursor: pointer;
 transition: .2s linear;
 display: flex;
 flex-direction: row;
@@ -77,7 +78,7 @@ font-size: 18px;
 } */
 `
 
-export const DropDown = ({Title, Content}: DropDownTypes) => {
+export const DropDown = ({ Title, Content }: DropDownTypes) => {
 
   const [isActive, setIsActive] = React.useState(false);
 
@@ -85,21 +86,25 @@ export const DropDown = ({Title, Content}: DropDownTypes) => {
     setIsActive(current => !current);
   };
 
-  return(
+  return (
     <details>
-      <StyledSummary 
-        onClick={handleClick} 
-        style={{backgroundPosition: isActive ? '-100%' : '', 
-        color: isActive ? '#b4af9a' :''}}
+      <StyledSummary
+        onClick={handleClick}
+        style={{
+          backgroundPosition: isActive ? '-100%' : '',
+          color: isActive ? '#b4af9a' : ''
+        }}
       >
-        <Symbol 
-          style={{display:"flex", justifyContent:"center", 
-          width:"20px", color: isActive ? '#57544a' :'', 
-          backgroundPosition: isActive? '-100%' : ''}}
-        > 
+        <Symbol
+          style={{
+            display: "flex", justifyContent: "center",
+            width: "20px", color: isActive ? '#57544a' : '',
+            backgroundPosition: isActive ? '-100%' : ''
+          }}
+        >
           {isActive ? "-" : "+"}
-        </Symbol> 
-        <div>{Title}</div> 
+        </Symbol>
+        <div>{Title}</div>
       </StyledSummary>
       {Content}
     </details>
