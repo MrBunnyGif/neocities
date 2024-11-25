@@ -1,5 +1,5 @@
 import React from "react";
-import {Outlet, useLocation, useSearchParams } from "react-router-dom";
+import { Outlet, useLocation, useSearchParams } from "react-router-dom";
 import { Bar, DropDown, Tab, YorhaNavLink } from "../../components";
 import { getArchivesMockData } from "../../utils/mockData/archivesMockData";
 import styles from './IntelModule.module.scss'
@@ -11,30 +11,30 @@ export const IntelModule = () => {
 
   let intellist = getArchivesMockData();
 
-  const first = intellist.filter((intellist)=>{
+  const first = intellist.filter((intellist) => {
     let filter = searchParams.get("type")
-    if(!filter) return true;
+    if (!filter) return true;
     let type = intellist.IntelType;
     return type.startsWith(filter);
-    }).map((item)=>
-    item.data.map((test)=>{
-      return(<YorhaNavLink variant="transparent" to={test.id + location.search} text={test.title} key={test.id}/>)
-  }))
-  
-  const second = intellist.filter((intellist)=>{
+  }).map((item) =>
+    item.data.map((test) => {
+      return (<YorhaNavLink variant="transparent" to={test.id + location.search} text={test.title} key={test.id} />)
+    }))
+
+  const second = intellist.filter((intellist) => {
     let filter = searchParams.get("type")
-    if(!filter) return true;
+    if (!filter) return true;
     let type = intellist.IntelType;
     return type.startsWith(filter);
-    }).map((item)=>item.nestedData.map((evenmore)=>{
-    return(
-      <DropDown 
+  }).map((item) => item.nestedData.map((evenmore) => {
+    return (
+      <DropDown
         key={evenmore.id}
-        Title={evenmore.title} 
+        Title={evenmore.title}
         Content={
-          evenmore.dropDownData.map((yeah)=>{
-            return(
-              <div key={Math.random()} className={styles.dropdownChild}><YorhaNavLink variant="transparent" to={yeah.id + location.search} text={yeah.title}/></div>
+          evenmore.dropDownData.map((yeah) => {
+            return (
+              <div key={Math.random()} className={styles.dropdownChild}><YorhaNavLink variant="transparent" to={yeah.id + location.search} text={yeah.title} /></div>
             )
           })
         }
@@ -48,7 +48,7 @@ export const IntelModule = () => {
     <div className={styles.IntelModule}>
       <div className={styles.IntelModuleContainer}>
         <div>
-          <Bar/>
+          <Bar />
         </div>
         <Tab
           className={styles.TabContent}
@@ -58,7 +58,7 @@ export const IntelModule = () => {
         />
       </div>
       <div className={styles.outlet}>
-        <Outlet/>
+        <Outlet />
       </div>
     </div>
   )
