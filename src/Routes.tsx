@@ -58,10 +58,6 @@ export const RoutesConfig = {
       Link: `posts`
     },
     {
-      Text: "SKILLS",
-      Link: `skills`
-    },
-    {
       Text: "SYSTEM",
       Link: `system`,
     },
