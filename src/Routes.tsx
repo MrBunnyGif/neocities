@@ -5,9 +5,7 @@ import { ItemsModule, ActiveItemsModule } from "./modules/itemsModule"
 import { WeaponsModule, ActiveWeaponsModule, WeaponsListModule } from "./modules/weaponsModule"
 import { NavbarModule } from "./modules/NavBarModule"
 import { QuestsModule, ActiveQuestsModule } from "./modules/questsModule"
-import { IntelModule } from "./modules/intelModule"
-import { ActiveIntelModule } from "./modules/intelModule/ActiveIntelModule"
-import { About, Projects, Posts, Intel, Debug, Home, Loading } from "./pages"
+import { About, Projects, Posts, Home, Loading } from "./pages"
 
 export const RoutesPages = () => {
   return (
@@ -32,18 +30,6 @@ export const RoutesPages = () => {
               <Route path={`:weaponid`} element={<ActiveWeaponsModule />} />
             </Route>
           </Route>
-        </Route>
-        <Route path={'/intel'} element={<Intel />}>
-          <Route path={'/intel/:type'} element={<IntelModule />}>
-            <Route path={":intelid"} element={<ActiveIntelModule />}></Route>
-          </Route>
-        </Route>
-        {/* components debug pages */}
-        <Route path="/debug" element={<Debug />}>
-          <Route path="/debug/fat" element={<>works fat</>} />
-          <Route path="/debug/long" element={<>works long</>} />
-          <Route path="/debug/transparent" element={<>works transparent</>} />
-          <Route path="/debug/neutral" element={<>works neutral</>} />
         </Route>
         {/* components debug pages */}
         <Route
@@ -78,10 +64,6 @@ export const RoutesConfig = {
     {
       Text: "SKILLS",
       Link: `skills`
-    },
-    {
-      Text: "INTEL",
-      Link: `intel`
     },
     {
       Text: "SYSTEM",
