@@ -1,1 +1,0 @@
-export {IntelModule} from "./IntelModule";
