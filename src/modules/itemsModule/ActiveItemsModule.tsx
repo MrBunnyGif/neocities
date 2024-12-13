@@ -6,9 +6,9 @@ import styles from './ItemsModule.module.scss';
 
 export const ActiveItemsModule = () => {
   let params = useParams();
-  let itemsId = getItemsId(parseInt(params.itemid, 10));
+  let itemsId = getItemsId(parseInt(params.projectid, 10));
 
-  return(
+  return (
     <Widget
       dark
       icon={false}
@@ -18,7 +18,7 @@ export const ActiveItemsModule = () => {
           <div className={styles.image}>
             <img src={itemsId.image} alt={`${itemsId.name} alt text`} />
           </div>
-          <Strip/>
+          <Strip />
           <div className={styles.content}>
             <div className={styles.desc}>
               {itemsId.description}

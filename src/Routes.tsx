@@ -4,7 +4,6 @@ import { Routes, Route, Navigate } from "react-router-dom"
 import { ItemsModule, ActiveItemsModule } from "./modules/itemsModule"
 import { WeaponsModule, ActiveWeaponsModule, WeaponsListModule } from "./modules/weaponsModule"
 import { NavbarModule } from "./modules/NavBarModule"
-import { QuestsModule, ActiveQuestsModule } from "./modules/questsModule"
 import { About, Projects, Posts, Home, Loading } from "./pages"
 
 export const RoutesPages = () => {
@@ -15,13 +14,10 @@ export const RoutesPages = () => {
         <Route path="/" element={<Navigate to="/loading" />} />
         <Route path={'/Home'} element={<Home />} />
         <Route path={`/about`} element={<About />}>
-          <Route path={`/about/:statusType/`} element={<QuestsModule />}>
-            <Route path={`:questid`} element={<ActiveQuestsModule />} />
-          </Route>
         </Route>
         <Route path={`/projects`} element={<Projects />}>
           <Route path="/projects/:type" element={<ItemsModule />}>
-            <Route path={`:itemid`} element={<ActiveItemsModule />} />
+            <Route path={`:projectid`} element={<ActiveItemsModule />} />
           </Route>
         </Route>
         <Route path={`/Posts`} element={<Posts />}>
