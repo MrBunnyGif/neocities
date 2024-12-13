@@ -7,7 +7,7 @@ import { NavbarModule } from "./modules/NavBarModule"
 import { QuestsModule, ActiveQuestsModule } from "./modules/questsModule"
 import { IntelModule } from "./modules/intelModule"
 import { ActiveIntelModule } from "./modules/intelModule/ActiveIntelModule"
-import { About, Projects, Weapons, Intel, Debug, Home, Loading } from "./pages"
+import { About, Projects, Posts, Intel, Debug, Home, Loading } from "./pages"
 
 export const RoutesPages = () => {
   return (
@@ -26,8 +26,8 @@ export const RoutesPages = () => {
             <Route path={`:itemid`} element={<ActiveItemsModule />} />
           </Route>
         </Route>
-        <Route path={`/weapons`} element={<Weapons />}>
-          <Route path={`/weapons/:list`} element={<WeaponsModule />}>
+        <Route path={`/Posts`} element={<Posts />}>
+          <Route path={`/Posts/:list`} element={<WeaponsModule />}>
             <Route path={`:type`} element={<WeaponsListModule />}>
               <Route path={`:weaponid`} element={<ActiveWeaponsModule />} />
             </Route>
@@ -72,8 +72,8 @@ export const RoutesConfig = {
       Link: `projects`
     },
     {
-      Text: "WEAPONS",
-      Link: `weapons`
+      Text: "POSTS",
+      Link: `posts`
     },
     {
       Text: "SKILLS",

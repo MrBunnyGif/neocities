@@ -4,17 +4,17 @@ import { Outlet, useParams } from "react-router-dom";
 import PagesChildTemplate from "../templates/pagesChildTemplate";
 import PagesTemplate from "../templates/pagesTemplate";
 
-export const Weapons = () => {
+export const Posts = () => {
   const param = useParams();
 
   const TypeChecker = () => {
-    if(!param.list){
+    if (!param.list) {
       return ""
-    }else
+    } else
       return "- Weapons"
   }
   // console.log(param.list)
-  return(
+  return (
     <PagesTemplate
       title="WEAPONS"
       subtitle={TypeChecker()}
@@ -24,13 +24,13 @@ export const Weapons = () => {
           extraMidSpace={true}
           LeftContent={
             <>
-              <YorhaNavLink variant="button" to={"type"} text="Weapons"/>
-              <YorhaNavLink disabled={true} text="Weapons Set 1"/>
-              <YorhaNavLink disabled={true} text="Weapons Set 2"/>
+              <YorhaNavLink variant="button" to={"type"} text="Weapons" />
+              <YorhaNavLink disabled={true} text="Weapons Set 1" />
+              <YorhaNavLink disabled={true} text="Weapons Set 2" />
             </>
           }
           MiddleContent={
-            <Outlet/>
+            <Outlet />
           }
           RightContent={
             <></>
