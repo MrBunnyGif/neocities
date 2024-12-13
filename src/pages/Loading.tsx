@@ -56,7 +56,7 @@ export const Loading = () => {
 
   const loadingCompleted = () => {
     setTimeout(() => {
-      navigate("/map");
+      navigate("/home");
     }, waitingTime);
   };
 

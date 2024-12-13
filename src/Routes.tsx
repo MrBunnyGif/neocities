@@ -7,7 +7,7 @@ import { NavbarModule } from "./modules/NavBarModule"
 import { QuestsModule, ActiveQuestsModule } from "./modules/questsModule"
 import { IntelModule } from "./modules/intelModule"
 import { ActiveIntelModule } from "./modules/intelModule/ActiveIntelModule"
-import { Quest, Items, Weapons, Intel, Debug, Map, Loading } from "./pages"
+import { About, Items, Weapons, Intel, Debug, Home, Loading } from "./pages"
 
 export const RoutesPages = () => {
   return (
@@ -15,9 +15,9 @@ export const RoutesPages = () => {
       <Route path={'/loading'} element={<Loading />} />
       <Route path={`/`} element={<NavbarModule />}>
         <Route path="/" element={<Navigate to="/loading" />} />
-        <Route path={'/map'} element={<Map />} />
-        <Route path={`/quest`} element={<Quest />}>
-          <Route path={`/quest/:statusType/`} element={<QuestsModule />}>
+        <Route path={'/Home'} element={<Home />} />
+        <Route path={`/about`} element={<About />}>
+          <Route path={`/about/:statusType/`} element={<QuestsModule />}>
             <Route path={`:questid`} element={<ActiveQuestsModule />} />
           </Route>
         </Route>
@@ -60,12 +60,12 @@ export const RoutesPages = () => {
 export const RoutesConfig = {
   RoutesConfigs: [
     {
-      Text: `MAP`,
-      Link: `map`,
+      Text: `HOME`,
+      Link: `home`,
     },
     {
-      Text: "QUESTS",
-      Link: `quest`,
+      Text: "ABOUT",
+      Link: `about`,
     },
     {
       Text: "ITEMS",

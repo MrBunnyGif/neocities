@@ -1,5 +1,5 @@
-export { Quest } from "./Quest";
-export { Map } from "./Map";
+export { About } from "./About";
+export { Home } from "./Home";
 export { Weapons } from "./Weapons";
 export { Items } from "./items";
 export { Debug } from "./debug";

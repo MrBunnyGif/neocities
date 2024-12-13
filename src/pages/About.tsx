@@ -1,6 +1,6 @@
 import React from "react";
-import { Outlet, useParams, useSearchParams} from "react-router-dom";
-import {YorhaNavLink } from "../components";
+import { Outlet, useParams, useSearchParams } from "react-router-dom";
+import { YorhaNavLink } from "../components";
 import PagesTemplate from "../templates/pagesTemplate";
 import { SubTitle } from "../utils/ParamAsSubTitle";
 import PagesChildTemplate from "../templates/pagesChildTemplate";
@@ -8,48 +8,48 @@ import StatusModule from "../modules/statusModule";
 
 let QuestList = [
   {
-    Link:"/quest/Active/Quest5?status=",
-    Text:"Active Quests",
-    type:"active",
+    Link: "/quest/Active/Quest5?status=",
+    Text: "Active Quests",
+    type: "active",
   },
   {
-    Link:"/quest/all/Quest1?status=",
-    Text:"All Quests",
-    type:"",
+    Link: "/quest/all/Quest1?status=",
+    Text: "All Quests",
+    type: "",
   },
   {
-    Link:"/quest/cleared/Quest1?status=",
-    Text:"Cleared Quests",
-    type:"cleared",
+    Link: "/quest/cleared/Quest1?status=",
+    Text: "Cleared Quests",
+    type: "cleared",
   },
 ]
 
-export const Quest = () => {
+export const About = () => {
 
   const param = useParams();
   let [searchParams] = useSearchParams();
   let status = (searchParams.get("status"));
 
   const ParamCheck = () => {
-    if(status === "active"){
+    if (status === "active") {
       return "quests currently in progress";
     }
-    else if(status === "cleared"){
+    else if (status === "cleared") {
       return "completed quests";
-    }else if(!status){
+    } else if (!status) {
       return "all quests";
-    }else if(status === "")
+    } else if (status === "")
       return "all accepted quests";
-  } 
+  }
 
   const TypeCheck = () => {
-    if(status === ""){
+    if (status === "") {
       return "all"
-    }else
+    } else
       return param.statusType
   }
 
-  return(
+  return (
     <PagesTemplate
       title={`QUESTS`}
       subtitle={SubTitle(TypeCheck(), "Quest")}
@@ -58,14 +58,14 @@ export const Quest = () => {
         <PagesChildTemplate
           LeftContent={
             <>
-              {QuestList.map((item)=>(
-                <YorhaNavLink key={item.Link} to={item.Link} filter={item.type} filterType={"status"} text={item.Text}/>
+              {QuestList.map((item) => (
+                <YorhaNavLink key={item.Link} to={item.Link} filter={item.type} filterType={"status"} text={item.Text} />
               ))}
             </>
           }
-          Outlet={<Outlet/>}
+          Outlet={<Outlet />}
           RightContent={
-            <StatusModule/>
+            <StatusModule />
           }
         />
       }
