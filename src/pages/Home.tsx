@@ -2,7 +2,6 @@ import React from "react";
 import { Bar, Button } from '@kaineee/nier-automata-ui-library';
 import styles from './Map.module.scss';
 import PagesTemplate from "../templates/pagesTemplate";
-import { Alert, AlertDescription, AlertTitle } from "../components/Alert"
 
 
 export const Home = () => {
